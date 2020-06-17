@@ -68,7 +68,6 @@ namespace NumberGuessingGame
             Console.WriteLine("Welcome! You have 5 chances to guess the designated number. \nThe number is between 5 - 80.");
             Random random = new Random();
             int number = random.Next(5, 80);
-            //Console.WriteLine("This is the generated number: " + number);
             int availableGuesses = 5;
             bool IsEqual = false;
             while (!IsEqual)
@@ -80,9 +79,8 @@ namespace NumberGuessingGame
                     {
                         numberGuess = Convert.ToInt32(Console.ReadLine());
                     }
-                    catch //(Exception e)
+                    catch
                     {
-                        //Console.WriteLine(e.Message);
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("That was dumb and its going to cost one of your guesses. \nI told you to input a number...");
                         availableGuesses--;
@@ -174,6 +172,7 @@ namespace NumberGuessingGame
                     Console.WriteLine("\nYou are out of guesses! ");
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("GAME OVER!!");
+                    Console.WriteLine($"The number was: {number}");
                     Console.ForegroundColor = ConsoleColor.White;
                     computerGamesWon++;
                     DoOver();
@@ -274,6 +273,7 @@ namespace NumberGuessingGame
                     Console.WriteLine("\nYou are out of guesses! ");
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("GAME OVER!!");
+                    Console.WriteLine($"The number was: {number}");
                     Console.ForegroundColor = ConsoleColor.White;
                     computerGamesWon++;
                     DoOver();
@@ -385,6 +385,7 @@ namespace NumberGuessingGame
                     Console.WriteLine("\nYou are out of guesses! ");
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("GAME OVER!!");
+                    Console.WriteLine($"The number was: {number}");
                     Console.ForegroundColor = ConsoleColor.White;
                     computerGamesWon++;
                     DoOver();
